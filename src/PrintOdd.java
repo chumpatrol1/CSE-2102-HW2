@@ -1,30 +1,44 @@
+
+import java.io.IOException;
 import java.util.Scanner;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 
-public class PrintOdd {
-    public static void main (String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the name of the input file: ");
-        String file_in = sc.next();
-        System.out.print("Enter the name of the output file: ");
-        String file_out = sc.next();
-
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        System.out.println(new File("midterm.txt").getAbsolutePath());
-
+class PrintOdd {
+    public static void main(String[] args) {
         try {
-            File myObj = new File(file_in);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
-            myReader.close();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the name of the input file:");
+            String inputFile = sc.nextLine();
 
-        } catch (FileNotFoundException e){
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+            System.out.println("Enter the name of the output file:");
+            String outputFile = sc.nextLine();
+
+            Scanner inputStream = null;
+            inputStream = new Scanner(new File(inputFile));
+
+            PrintWriter outputStream = null;
+            outputStream = new PrintWriter(new File(outputFile));
+
+            while (inputStream.hasNextLine()) {
+
+                String curLine = inputStream.nextLine();
+                String[] arr = curLine.split(" ");
+
+                for (int i = 1; i < arr.length; i++)
+                    outputStream.write(arr[i] + " ");
+                outputStream.println();
+
+            }
+
+            inputStream.close();
+            outputStream.close();
+            sc.close();
+
+        }
+
+        catch (IOException e) {
+            System.out.println("Some exceptions");
         }
     }
 }
