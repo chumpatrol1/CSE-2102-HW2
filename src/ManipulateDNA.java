@@ -20,8 +20,9 @@ public class ManipulateDNA {
             // looping line by line in inputFile
             while (inputStream.hasNextLine()) {
 
-                print("SEQUENCE NUMBER ", sequence_number);
+                System.out.println("SEQUENCE NUMBER " + sequence_number);
                 sequence_number += 1;
+
 
                 String curLine = inputStream.nextLine();
                 System.out.print("INPUT SEQUENCE: ");
