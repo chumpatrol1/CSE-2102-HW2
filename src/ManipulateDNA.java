@@ -42,7 +42,7 @@ public class ManipulateDNA {
 
                 char d;
                 String complement = "";
-                // Loop through the input, extract the character, and add it to our reversed string
+                // Loop through the input, and find the complement. If the character is invalid leave a space.
                 for (int i=0; i<curLine.length(); i++){
                     c = curLine.charAt(i); //extracts each character
 
@@ -52,8 +52,10 @@ public class ManipulateDNA {
                         d = 'A';
                     } else if (c == 'C'){
                         d = 'G';
-                    } else {
+                    } else if (c == 'G') {
                         d = 'C';
+                    } else {
+                        d = ' ';
                     }
 
                     complement = d + complement; //adds each character in front of the existing string
@@ -61,6 +63,8 @@ public class ManipulateDNA {
 
                 System.out.print("COMPLEMENT SEQUENCE: ");
                 System.out.println(complement);
+
+                // Reverse the complement sequence to get the Reverse Complement
 
                 reversed = "";
                 for (int i=0; i<complement.length(); i++){
