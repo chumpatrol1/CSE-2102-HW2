@@ -59,7 +59,7 @@ public class ExamAverager {
                     System.out.printf("%6f", floatArray[cur]);
                     System.out.println(" -- Above average");
                 } else {
-                    System.out.print("Score #" + (cur + 1));
+                    System.out.print("Score #" + (cur + 1) + ": ");
                     System.out.printf("%6f", floatArray[cur]);
                     System.out.println(" -- Below average");
                 }
