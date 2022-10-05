@@ -26,7 +26,7 @@ public class TriangleTester {
             // Determine what kind of triangle we have
             if(a_squared + b_squared == c_squared || a_squared + c_squared == b_squared || b_squared + c_squared == a_squared){
                 System.out.println("It is a right triangle");
-            } else if (ordered_by_size[0] + ordered_by_size[1] > ordered_by_size[2]){
+            } else if (ordered_by_size[0] + ordered_by_size[1] < ordered_by_size[2]){
                 System.out.println("It is an obtuse triangle");
             } else {
                 System.out.println("It is an acute triangle");
