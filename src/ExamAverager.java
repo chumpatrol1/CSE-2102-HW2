@@ -61,9 +61,9 @@ public class ExamAverager {
                 } else {
                     System.out.print("Score #" + (cur + 1) + ": ");
                     System.out.printf("%6f", floatArray[cur]);
-                    System.out.println(" -- Below average");
+                    System.out.println(" -- Average");
                 }
-
+                // moving to next exam
                 cur += 1;
 
             }
@@ -99,7 +99,7 @@ public class ExamAverager {
                 }
                 while (true) {
                     // keep going until a negative input
-                    newValue = (sc.nextInt());
+                    newValue = (sc.nextDouble());
                     if (newValue < 0) {
                         break;
                     } else {
@@ -111,11 +111,12 @@ public class ExamAverager {
                     }
                 }
                 // calculating average
-                examAverage = (float) tempTotal / count;
+                examAverage = (double) tempTotal / (double) count;
                 System.out.println("The average is " + examAverage);
 
                 // cur keeps track of what number exam is being printed
                 cur = 0;
+                // same thing keep going until you see a -1
                 while (true) {
                     if (floatArray[cur] <= -1) {
                         break;
